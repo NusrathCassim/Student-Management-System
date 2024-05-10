@@ -1,0 +1,12 @@
+p {
+    color: black;
+    margin-left: 250px;
+    margin-top: 75px
+}
+
+.profile {
+    width: 100px;
+    height: 100px;
+    margin-left: 75%;
+    margin-top: 190px;
+}
