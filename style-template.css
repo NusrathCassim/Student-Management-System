@@ -5,12 +5,23 @@
     font-family: "Poppins", sans-serif;
 }
 
+
+p {
+    color: black;
+    margin-left: 0; /* Reset the left margin */
+    margin-top: 0; /* Reset the top margin */
+}
+
+/* Additional styles for specific elements */
+
+
 body {
     min-height: 100vh;
     background: white;
     color: white;
     background-size: cover;
     background-position: center;
+    cursor: default;
 }
 
 .side-bar-left {

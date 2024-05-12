@@ -30,6 +30,6 @@ require './assests/content/static/template.php';
     <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
     <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
     
-    </p>
+
 </body>
 </html>

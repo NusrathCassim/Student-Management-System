@@ -50,7 +50,7 @@ if(isset($_SESSION['username'])) {
     
     <div class="top-bar">
         <!-- Logout button -->
-        <a href="index.php">LOGOUT</a>
+        <a href="../../../index.php">LOGOUT</a>
     </div>
 
     <!-- =========================================================== top-bar finish =========================================================== -->
@@ -191,17 +191,17 @@ if(isset($_SESSION['username'])) {
 
             <!-- Course Modules -->
             <div class="item">
-                <a href=""><i class="fas fa-info-circle"></i>Course Modules
+                <a href=""><i class="fas fa-info-circle"></i>Course Modules </a>
             </div>
             
             <!-- Course Materials -->
             <div class="item">
-                <a href=""><i class="fas fa-book-reader"></i>Course Materials
+                <a href=""><i class="fas fa-book-reader"></i>Course Materials </a>
             </div>
 
             <!-- Penalty -->
             <div class="item">
-                <a href=""><i class="fa fa-dollar"></i>Penalty
+                <a href=""><i class="fa fa-dollar"></i>Penalty </a>
             </div>
 
             <!-- Course Guidlines Category -->
@@ -218,27 +218,27 @@ if(isset($_SESSION['username'])) {
 
             <!-- Notice Board -->
             <div class="item">
-                <a href=""><i class="far fa-sticky-note"></i>Notice Board
+                <a href=""><i class="far fa-sticky-note"></i>Notice Board </a>
             </div>
 
             <!-- Message -->
             <div class="item">
-                <a href=""><i class="fas fa-envelope"></i>Message
+                <a href=""><i class="fas fa-envelope"></i>Message </a>
             </div>
 
             <!-- Call Center -->
             <div class="item">
-                <a href=""><i class="fas fa-phone-alt"></i>Call Center
+                <a href=""><i class="fas fa-phone-alt"></i>Call Center </a>
             </div>
 
             <!-- Lecture Evaluation -->
             <div class="item">
-                <a href=""><i class="fas fa-chart-line"></i>Lecture Evaluation
+                <a href=""><i class="fas fa-chart-line"></i>Lecture Evaluation </a>
             </div>
 
             <!-- Vacancies -->
             <div class="item">
-                <a href=""><i class="fas fa-user-plus"></i>Vacancies
+                <a href=""><i class="fas fa-user-plus"></i>Vacancies </a>
             </div>
 
 
