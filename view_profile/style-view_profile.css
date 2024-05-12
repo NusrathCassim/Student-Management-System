@@ -1,7 +1,13 @@
+body {
+    cursor: default; /* Set cursor to default for the entire body */
+    text-decoration: none;
+}
+
 p {
     color: black;
     margin-left: 250px;
-    margin-top: 75px
+    margin-top: 75px;
+    text-decoration: none;
 }
 
 .profile {

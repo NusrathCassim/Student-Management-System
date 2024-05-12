@@ -6,7 +6,7 @@ session_start();
 include_once('../connection.php');
 
 // Loading the HTML template
-require '../assests/content/static/template.php';
+include_once('../assests/content/static/template.php');
 
 
 ?>
