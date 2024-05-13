@@ -18,7 +18,7 @@ if (isset($_POST)) {
         // For example, fetching user data from the database
     }
 } else {
-    // Handle the case where no POST data is set (if applicable)
+    //  // Handle the case where no POST data is set (if applicable)
     echo "No POST data received.";
 }
 ?>
