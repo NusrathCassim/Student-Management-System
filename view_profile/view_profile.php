@@ -24,17 +24,37 @@ include_once('../assests/content/static/template.php');
 <body>
     
     
-    <img src="../pics/default_pic.jpg" alt="" class="profile">
-    
-    <p>1ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>1ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>1ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+    <div class="profileTop">
+
+    <h1 class="topname"> <span><?php echo isset($student_name) ? $student_name : ''; ?></span></h1>
+         <h6>HND in Software Engineering</h6>
+             <br><br>
+             
+                <div class="p_data">
+                <h2 class="personal_details">Personal Details</h2><hr>
+                <h4 class="studentid">Student ID :  <span><?php echo isset($username) ? $username : ''; ?></span></h4>
+
+                <h4 class="Batch_No"> Batch No :  <span><?php echo isset($batch_number) ? $batch_number   : ''; ?></span></h4>
+
+                <h4 class="Gender">   Gender :  <span><?php echo isset($username) ? $username : ''; ?></span></h4>
+
+                <h4 class="birth_date">Birth date :  <span><?php echo isset($dob) ? $dob : ''; ?></span></h4>
+
+                <h4 class="NIC">       National Identification No. :  <span><?php echo isset($student_name) ? $student_name : ''; ?></span></h4>
+
+                <h4 class="Email">     Email :  <span><?php echo isset($username) ? $username : ''; ?></span></h4>
+
+                <h4 class="Contact">   Contact :  <span><?php echo isset($username) ? $username : ''; ?></span></h4>
+                <br><br>
+                </div>
+
+                <div class="University_data">
+                <h2 class="uni_details">University Details</h2><hr>
+                <h4 class="uni">Awarding University :  <span><?php echo isset($username) ? $username : ''; ?></span></h4>
+                <h4 class="uni_no">University Number :  <span><?php echo isset($username) ? $username   : ''; ?></span></h4>
+                <h4 class="center">Local Education Center :  <span><?php echo isset($student_name) ? $student_name : ''; ?></span></h4>
+                </div>
+    </div>
     
     
 </body>
