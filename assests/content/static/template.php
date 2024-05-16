@@ -70,7 +70,7 @@ if(isset($_SESSION['username'])) {
             </div> -->
 
             <!-- welcome -->
-            <h1>Welcome,  <span><?php echo isset($student_name) ? $student_name : ''; ?></span></h1>
+            <h1 class="welcome">Welcome,  <span><?php echo isset($student_name) ? $student_name : ''; ?></span></h1>
 
         </header>
 
@@ -247,17 +247,6 @@ if(isset($_SESSION['username'])) {
 
     <!-- =========================================================== left-side bar finish =========================================================== -->
 
-
-
-
-    <!-- =========================================================== advertistment begin =========================================================== -->
-    <!-- advertistment -->
-    <div class="advertistment-side-bar">
-
-
-    </div>
-    <!-- =========================================================== advertistment finish =========================================================== -->
-    
 
     
 

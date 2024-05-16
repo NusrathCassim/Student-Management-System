@@ -7,22 +7,11 @@
 
 
 p {
-    color: black;
     margin-left: 0; /* Reset the left margin */
     margin-top: 0; /* Reset the top margin */
 }
 
 /* Additional styles for specific elements */
-
-
-body {
-    min-height: 100vh;
-    background: white;
-    color: white;
-    background-size: cover;
-    background-position: center;
-    cursor: default;
-}
 
 .side-bar-left {
     background: #1b1a1b;
@@ -35,23 +24,15 @@ body {
     transition-property: left;
 }
 
-.advertistment-side-bar {
-    background: #1b1a1b;
-    margin-left: 85%;
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    overflow-y: auto;
-    transition: 0.6s ease;
-    transition-property: right;
-}
-
 header {
     background: #33363a;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+header .welcome {
+    color: #fff;
 }
 
 
