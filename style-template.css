@@ -49,16 +49,11 @@ body {
 
 header {
     background: #33363a;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-header img {
-    width: 100px;
-    height: 100px;
-    margin: 15px;
-    margin-left: 75px;
-    border-radius: 50%;
-    border: 3px solid #b4b8b9;
-}
 
 .close-btn {
     position: absolute;

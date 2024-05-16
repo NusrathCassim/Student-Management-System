@@ -30,7 +30,7 @@ if(isset($_SESSION['username'])) {
 <html lang="en">
 
 <head>
-  <title>Welcome Form</title>
+  <title>ABC INSTITUTE</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -69,9 +69,6 @@ if(isset($_SESSION['username'])) {
                 <i class="fas fa-times"></i>
             </div> -->
 
-            <!-- image -->
-            <img src="../../../pics/default_pic.jpg" alt="Please upload a photo">
-
             <!-- welcome -->
             <h1>Welcome,  <span><?php echo isset($student_name) ? $student_name : ''; ?></span></h1>
 
@@ -97,9 +94,9 @@ if(isset($_SESSION['username'])) {
                     <!-- Dropdown -->
                 </a>
                 <div class="sub-menu">
-                    <a href="sub_item01.html" class="sub-item">Make Payments</a>
-                    <a href="" class="sub-item">View Payments Status</a>
-                    <a href="" class="sub-item">Upload Payment Receipts</a>
+                    <a href="../../../PaymentSection/make_payment/make_payment.php" class="sub-item">Make Payments</a>
+                    <a href="../../../PaymentSection/view_paymentStatus/view_paymentStatus.php" class="sub-item">View Payments Status</a>
+                    <a href="../../../PaymentSection/upload_paymentReceipt/upload_paymentReceipt.php" class="sub-item">Upload Payment Receipts</a>
                 </div>
             </div>
 
@@ -109,8 +106,8 @@ if(isset($_SESSION['username'])) {
                     <!-- Dropdown -->
                 </a>
                 <div class="sub-menu">
-                    <a href="" class="sub-item">Reserve Library Books</a>
-                    <a href="" class="sub-item">Manage Reserved Books</a>
+                    <a href="../../../LibrarySection/ReserveBooks/reserveBooks.php" class="sub-item">Reserve Library Books</a>
+                    <a href="../../../LibrarySection/ManageReservedBooks/manageReservedBooks.php" class="sub-item">Manage Reserved Books</a>
 
                 </div>
             </div>
@@ -121,10 +118,10 @@ if(isset($_SESSION['username'])) {
                     <!-- Dropdown -->
                 </a>
                 <div class="sub-menu">
-                    <a href="" class="sub-item">Graduation Schedule</a>
-                    <a href="" class="sub-item">Register for Graduation</a>
-                    <a href="" class="sub-item">Graduation Photos</a>
-                    <a href="" class="sub-item">Registration Summary</a>
+                    <a href="../../../GraduationSection/GraduationSchedule/graduationSchedule.php" class="sub-item">Graduation Schedule</a>
+                    <a href="../../../GraduationSection/RegisterGrad/registerGrad.php" class="sub-item">Register for Graduation</a>
+                    <a href="../../../GraduationSection/GradPhotos/gradPhotos.php" class="sub-item">Graduation Photos</a>
+                    <a href="../../../GraduationSection/RegisterSummary/registerSummary.php" class="sub-item">Registration Summary</a>
                 </div>
             </div>
             
