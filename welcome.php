@@ -22,16 +22,18 @@ require './assests/content/static/template.php';
 </head>
 <body>
     
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
-    <p>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+    <!--Main pic of welcome page-->
+    <div class="main-pic">
+       <img class="G1" src="./pics/G1.jpg">
+       <img class="logo" src="./pics/L1.png">
+    </div>
 
-    <img class="dog" src="./pics/s.jpg">
+    <!--Bottom Bar Text-->
+    <div class="Bottom-bar">
+    <div class="text">
+       <p><marquee behavior="" direction="left"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nostrum sunt quidem error, ducimus dolor natus sequi iste velit voluptatem minima nisi laudantium, nulla nobis modi dicta deserunt? Similique, delectus!</marquee> </p>
+    </div>
+    </div>
     
 
 </body>

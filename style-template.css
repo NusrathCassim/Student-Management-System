@@ -5,13 +5,10 @@
     font-family: "Poppins", sans-serif;
 }
 
-
 p {
     margin-left: 0; /* Reset the left margin */
     margin-top: 0; /* Reset the top margin */
 }
-
-/* Additional styles for specific elements */
 
 .side-bar-left {
     background: #1b1a1b;
@@ -26,7 +23,7 @@ p {
 
 header {
     background: #33363a;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -96,7 +93,10 @@ header h1 {
 }
 
 .top-bar {
-    background: red;
+    display: flex; 
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    background: rgb(213, 213, 213);
     width: 100%;
     height: 75px;
     position: fixed;
@@ -107,9 +107,68 @@ header h1 {
 }
 
 .top-bar a  {
-    margin-left: 80%;
-    padding-top: 20px;
-    color: #fff;
+    font-weight: 540;
+    color: #000000;
     text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+.top-bar .logo1{
+    margin-left: 250px;
+    cursor: pointer;
+}
+.profile-photo img {
+    cursor: pointer;
+    margin-left: 400px;
+    width: 50px;
+    height: 50px; 
+    background-image: url('pics\default_pic.jpg');
+    border-radius: 50%; 
 }
 
+/*TopBar Links*/
+nav{
+	position: relative;
+    margin-left: 280px;
+	text-align: center;
+	width: 220px;
+	height: 50px;
+	border-radius: 8px;
+	font-size: 0;
+}
+nav a{
+	font-size: 18px;
+	text-transform:capitalize;
+	color: white;
+	text-decoration: none;
+	line-height: 50px;
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	text-align: center;
+}
+nav .animation{
+	position: absolute;
+	height: 5px;
+	/* height: 5px; */
+	bottom: 0;
+	/* bottom: 0; */
+	z-index: 0;
+	background: #ff0000;
+	border-radius: 8px;
+	transition: all .5s ease 0s;
+}
+nav a:nth-child(1){
+	width: 100px;
+}
+nav a:nth-child(1):hover~.animation{
+	width: 100px;
+	left: 0;
+}
+nav a:nth-child(2){
+	width: 110px;
+}
+nav a:nth-child(2):hover~.animation{
+	width: 110px;
+	left: 100px;
+}
