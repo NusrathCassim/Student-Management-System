@@ -1,15 +1,4 @@
-<?php
-// Start the session
-session_start();
 
-// Include the database connection
-include_once('connection.php');
-
-// Loading the HTML template
-require './assests/content/static/template.php';
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,3 +27,16 @@ require './assests/content/static/template.php';
 
 </body>
 </html>
+
+<?php
+// Start the session
+session_start();
+
+// Include the database connection
+include_once('connection.php');
+
+// Loading the HTML template
+require './assests/content/static/template.php';
+
+
+?>

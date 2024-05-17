@@ -21,6 +21,10 @@ p {
     transition-property: left;
 }
 
+.side-bar-left::-webkit-scrollbar {
+    display: none;
+}
+
 header {
     background: #33363a;
     padding-top: 15px;

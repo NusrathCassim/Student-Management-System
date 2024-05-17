@@ -5,13 +5,24 @@ if(isset($_SESSION['username'])) {
     $username = mysqli_real_escape_string($conn, $_SESSION['username']);
     
     // Prepare and execute the SQL query to fetch user's name
-    $sql = "SELECT student_name FROM login_tbl WHERE username = '$username'";
+    $sql = "SELECT * FROM login_tbl WHERE username = '$username'";
     $result = mysqli_query($conn, $sql);
     
     // Check if query executed successfully and user exists
     if($result && mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         $student_name = $row['student_name'];
+        $course = $row['course'];
+        $batch_number = $row['batch_number'];
+        $gender = $row['gender'];
+        $dob = $row['dob'];
+        $nic = $row['nic'];
+        $email = $row['email'];
+        $contact = $row['contact'];
+        $awarding_uni = $row['awarding_uni'];
+        $uni_number = $row['uni_number'];
+        $lec = $row['lec'];
+        
     } else {
         // Redirect to login page if user does not exist
         header("Location: login.php");
