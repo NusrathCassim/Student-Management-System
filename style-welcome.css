@@ -1,10 +1,42 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-p{
-    margin-left: 300px;
+.main-pic {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 100px;
 }
+
+.logo {
+    position: absolute;
+    width: 30%;
+    top: 32%; 
+    left: 65%; 
+    transform: translate(-50%, -50%); /* Center the logo */
+}
+
+.Bottom-bar {
+    margin-left: 260px;
+    background: rgb(0, 0, 0);
+    width: 85%;
+    height: 30px;
+    position: fixed;
+    bottom: 0%;
+    overflow-y: auto;
+    transition: 0.6s ease;
+    transition-property: left;
+}
+
+.Bottom-bar .text p {
+    margin-top: 5px;
+    font-size: 15px;
+    color: white; 
+}
+
+
+

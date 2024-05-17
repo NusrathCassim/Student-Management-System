@@ -52,9 +52,22 @@ if(isset($_SESSION['username'])) {
     <!-- =========================================================== top-bar begin =========================================================== -->
     
     <div class="top-bar">
-        <!-- Logout button -->
-        <a href="../../../index.php">LOGOUT</a>
+        <!--TopBar Logo -->
+        <img class="logo1" src="../../../pics/L2.png">
+    
+    <!--TopBar Links-->
+    <nav>
+      <a href="../../../welcome.php">Home</a>
+      <a href="../../../index.php">Logout</a>
+      <div class="animation start-home"></div>
+    </nav>
+        
+        <!--Profile Photo of TopBar-->
+        <div class="profile-photo">
+            <img class="dp" src="../../../pics/default_pic.jpg">
+        </div>
     </div>
+
 
     <!-- =========================================================== top-bar finish =========================================================== -->
 
