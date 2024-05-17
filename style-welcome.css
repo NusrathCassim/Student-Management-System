@@ -1,3 +1,4 @@
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,23 +10,34 @@ html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 body::-webkit-scrollbar {
     display: none;
 }
 
+/* Main picture section */
 .main-pic {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin-left: 100px;
     max-width: 100vw;
     overflow-x: hidden;
+    position: relative;
 }
 
 .G1 {
     filter: blur(4px);
+    width: 100%;
 }
 
 .logo {
@@ -36,23 +48,88 @@ body::-webkit-scrollbar {
     transform: translate(-50%, -50%); /* Center the logo */
 }
 
+/* Bottom bar */
 .Bottom-bar {
-    margin-left: 260px;
-    background: rgb(0, 0, 0);
-    width: 85%;
-    height: 30px;
     position: fixed;
-    bottom: 0%;
-    overflow-y: auto;
+    left: 0; /* Start from the left edge */
+    bottom: 0;
+    width: 100vw; /* Span the entire width of the viewport */
+    background: rgb(0, 0, 0);
+    height: 45px;
+    overflow: hidden;
     transition: 0.6s ease;
     transition-property: left;
+    padding: 0; /* Ensure there is no padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .Bottom-bar .text p {
-    margin-top: 5px;
-    font-size: 15px;
+    margin: 0;
+    padding: 10px;
+    font-size: 25px;
     color: white;
+    white-space: nowrap; /* Prevent text from wrapping */
+    
 }
 
 
 
+
+/* Media Queries for Responsiveness */
+
+/* Small Devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+    .main-pic {
+        margin-left: 0;
+    }
+    .logo {
+        width: 50%;
+        top: 40%;
+        left: 50%;
+    }
+    .Bottom-bar {
+        margin-left: 0;
+        width: 100%;
+    }
+    .Bottom-bar .text p {
+        font-size: 12px;
+    }
+}
+
+/* Medium Devices (tablets, 600px to 768px) */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .main-pic {
+        margin-left: 0;
+    }
+    .logo {
+        width: 40%;
+        top: 35%;
+        left: 50%;
+    }
+    .Bottom-bar {
+        margin-left: 0;
+        width: 100%;
+    }
+    .Bottom-bar .text p {
+        font-size: 13px;
+    }
+}
+
+/* Large Devices (desktops, 768px and up) */
+@media screen and (min-width: 769px) {
+    .main-pic {
+        margin-left: 100px;
+    }
+    .logo {
+        width: 30%;
+        top: 32%;
+        left: 65%;
+    }
+    .Bottom-bar {
+        margin-left: 260px;
+        width: 100%;
+    }
+    .Bottom-bar .text p {
+        font-size: 15px;
+    }
+}
