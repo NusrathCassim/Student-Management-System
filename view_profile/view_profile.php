@@ -23,7 +23,7 @@ include_once('../assests/content/static/template.php');
 </head>
 <body>
     
-//adding user profile image
+<!-- //adding user profile image -->
     <div class="profilepic">
         <a href="..\view_profile\Images\User Icon.png">
         <img src="..\view_profile\Images\User Icon.png" alt="User Profile Icon">

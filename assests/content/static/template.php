@@ -55,37 +55,37 @@ if(isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style-template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 </head>
 
 <body>
 
-    <!-- =========================================================== top-bar begin =========================================================== -->
-    
-    <div class="top-bar">
-        <!--TopBar Logo -->
-        <img class="logo1" src="../../../pics/L2.png">
-    
-    <!--TopBar Links-->
-    <nav>
-      <a href="../../../welcome.php">Home</a>
-      <a href="../../../index.php">Logout</a>
-      <div class="animation start-home"></div>
-    </nav>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
         
-        <!--Profile Photo of TopBar-->
-        <div class="profile-photo">
-            <img class="dp" src="../../../pics/default_pic.jpg">
+        <i class="bi bi-list toggle-sidebar-btn"></i>
         </div>
-    </div>
+        <a href="../../../welcome.php"><img src="../../../pics/L2.png" alt="" class="logos"></a>
+        
 
+        <nav class="header-nav ms-auto">
 
-    <!-- =========================================================== top-bar finish =========================================================== -->
+            
 
+            <ul class="d-flex align-items-center">
+            
+            <a href="../../../welcome.php"><li>Home</li></a>
+            <a href="../../../index.php"><li>Logout</li></a>
+
+            </ul>
+        </nav>
+
+    </header><!-- End Header -->
 
     <!-- =========================================================== left-side bar begin =========================================================== -->
 
-    <div class="side-bar-left">
+    <div class="sidebar">
         <!-- header section -->
         <header>
             <!-- close button -->
@@ -155,8 +155,8 @@ if(isset($_SESSION['username'])) {
                     <!-- Dropdown -->
                 </a>
                 <div class="sub-menu">
-                    <a href="" class="sub-item">Library Membership</a>
-                    <a href="" class="sub-item">Recreation Membership</a>
+                    <a href="../../../MembershipSection/library_mem/library_mem.php" class="sub-item">Library Membership</a>
+                    <a href="../../../MembershipSection/recreation_mem/recreation_mem.php" class="sub-item">Recreation Membership</a>
                     
                 </div>
             </div>
@@ -271,29 +271,17 @@ if(isset($_SESSION['username'])) {
 
     <!-- =========================================================== left-side bar finish =========================================================== -->
 
-
-    
-
-
 </body>
-
-
-
-
-
 
 <!-- Jquery CDN link -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
+<script>
         $(document).ready(function(){
             var timeout;
-
-            // jQuery for sub-menu
+            //Jquery for sub-menu
             $('.sub-btn').hover(function(){
                 clearTimeout(timeout); // Clear any existing timeout
-                $('.sub-menu').not($(this).next('.sub-menu')).slideUp(); // Close other submenus
                 $(this).next('.sub-menu').slideDown();
-                $('.sub-btn').not(this).find('.dropdown').removeClass('rotate'); // Remove rotate class from other buttons
                 $(this).find('.dropdown').addClass('rotate');
             }, function(){
                 var $submenu = $(this).next('.sub-menu');
@@ -302,7 +290,7 @@ if(isset($_SESSION['username'])) {
                 }, 300); // Adjust delay time as needed
                 $(this).find('.dropdown').removeClass('rotate');
             });
-
+    
             // Keep submenu open when hovering over it
             $('.sub-menu').hover(function(){
                 clearTimeout(timeout); // Clear any existing timeout
@@ -310,15 +298,62 @@ if(isset($_SESSION['username'])) {
                 $(this).slideUp();
                 $('.sub-btn').find('.dropdown').removeClass('rotate');
             });
-
+    
             // Close all submenus when mouse pointer moves outside
             $(document).on('mouseover', function(e){
-                if (!$(e.target).closest('.side-bar-left').length) {
+                if (!$(e.target).closest('.sidebar').length) {
                     $('.sub-menu').slideUp();
                     $('.sub-btn').find('.dropdown').removeClass('rotate');
                 }
             });
         });
-    </script>
+</script>
+
+<script>
+    (function() {
+        "use strict";
+
+        /**
+         * Easy selector helper function
+         */
+        const select = (el, all = false) => {
+            el = el.trim()
+            if (all) {
+            return [...document.querySelectorAll(el)]
+            } else {
+            return document.querySelector(el)
+            }
+        }
+
+        /**
+         * Easy event listener function
+         */
+        const on = (type, el, listener, all = false) => {
+            if (all) {
+            select(el, all).forEach(e => e.addEventListener(type, listener))
+            } else {
+            select(el, all).addEventListener(type, listener)
+            }
+        }
+
+        /**
+         * Easy on scroll event listener 
+         */
+        const onscroll = (el, listener) => {
+            el.addEventListener('scroll', listener)
+        }
+
+        /**
+         * Sidebar toggle
+         */
+        if (select('.toggle-sidebar-btn')) {
+            on('click', '.toggle-sidebar-btn', function(e) {
+            select('body').classList.toggle('toggle-sidebar')
+            })
+        }
+
+    })();
+</script>
+
 
 </html>

@@ -5,55 +5,36 @@
     font-family: "Poppins", sans-serif;
 }
 
-p {
-    margin-left: 0; /* Reset the left margin */
-    margin-top: 0; /* Reset the top margin */
-}
 
-.side-bar-left {
+/* Sidebar section ================================================================================*/
+
+.sidebar {
     background: #1b1a1b;
-    width: 260px;
-    height: 100vh;
     position: fixed;
-    top: 0;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 996;
+    transition: all 0.3s;
+    padding: 20px;
     overflow-y: auto;
     transition: 0.6s ease;
     transition-property: left;
 }
 
-.side-bar-left::-webkit-scrollbar {
+.sidebar h1 {
+        text-align: center;
+        font-size: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-bottom: 13px;
+        font-family: sans-serif;
+        color: #fff;
+}
+
+.sidebar::-webkit-scrollbar {
     display: none;
-}
-
-header {
-    background: #33363a;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-header .welcome {
-    color: #fff;
-}
-
-
-.close-btn {
-    position: absolute;
-    color: #fff;
-    font-size: 23px;
-    right: 0px;
-    margin: 15px;
-    cursor: pointer;
-}
-
-header h1 {
-    text-align: center;
-    font-size: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-bottom: 13px;
-    font-family: sans-serif;
-    
 }
 
 .menu {
@@ -96,6 +77,69 @@ header h1 {
     border: 1px solid blue;
 }
 
+/* Sidebar section close============================================================================== */
+
+
+/* Header Section  ================================================================================*/
+
+header {
+    background: #33363a;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+header .header-nav {
+    color: #fff;
+}
+
+.header {
+    transition: all 0.5s;
+    z-index: 997;
+    height: 60px;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+    background-color: #1b1a1b;
+    padding-left: 20px;
+    /* Toggle Sidebar Button */
+    /* Search Bar */
+  }
+  
+  .header .toggle-sidebar-btn {
+    font-size: 32px;
+    padding-left: 10px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+/* Center the items in the navigation bar */
+.header-nav a {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Horizontally center the items */
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Style for each list item */
+.header-nav ul li {
+    margin: 0 10px; /* Add spacing between the items */
+    color: #fff; /* Text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 16px; /* Font size */
+    font-family: sans-serif; /* Font family */
+}
+
+/* Style for list item hover */
+.header-nav ul li:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Header Section close================================================================================*/
+
+
 .top-bar {
     display: flex; 
     justify-content: center; /* Center the content horizontally */
@@ -110,17 +154,7 @@ header h1 {
     transition-property: left;
 }
 
-.top-bar a  {
-    font-weight: 540;
-    color: #000000;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-}
-.top-bar .logo1{
-    margin-left: 250px;
-    cursor: pointer;
-}
+
 .profile-photo img {
     cursor: pointer;
     margin-left: 400px;
@@ -130,49 +164,53 @@ header h1 {
     border-radius: 50%; 
 }
 
-/*TopBar Links*/
-nav{
-	position: relative;
-    margin-left: 280px;
-	text-align: center;
-	width: 220px;
-	height: 50px;
-	border-radius: 8px;
-	font-size: 0;
-}
-nav a{
-	font-size: 18px;
-	text-transform:capitalize;
-	color: white;
-	text-decoration: none;
-	line-height: 50px;
-	position: relative;
-	z-index: 1;
-	display: inline-block;
-	text-align: center;
-}
-nav .animation{
-	position: absolute;
-	height: 5px;
-	/* height: 5px; */
-	bottom: 0;
-	/* bottom: 0; */
-	z-index: 0;
-	background: #ff0000;
-	border-radius: 8px;
-	transition: all .5s ease 0s;
-}
-nav a:nth-child(1){
-	width: 100px;
-}
-nav a:nth-child(1):hover~.animation{
-	width: 100px;
-	left: 0;
-}
-nav a:nth-child(2){
-	width: 110px;
-}
-nav a:nth-child(2):hover~.animation{
-	width: 110px;
-	left: 100px;
-}
+/* Responisve section */
+
+@media (max-width: 1199px) {
+    .sidebar {
+      left: -300px;
+    }
+    .logos {
+        margin-left: 50px;
+    }
+  }
+
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #aab7cf;
+  }
+  
+  @media (min-width: 1200px) {
+    
+    .toggle-sidebar-btn {
+        display: none;
+    }
+
+    #main,
+    #footer {
+      margin-left: 300px;
+    }
+  }
+  
+  @media (max-width: 1199px) {
+    .toggle-sidebar .sidebar {
+      left: 0;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+  
+    .toggle-sidebar #main,
+    .toggle-sidebar #footer {
+      margin-left: 0;
+    }
+  
+    .toggle-sidebar .sidebar {
+      left: -300px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .logos {
+        display: none;
+    }
+  }

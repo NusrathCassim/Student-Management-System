@@ -118,7 +118,7 @@ body::-webkit-scrollbar {
 /* Large Devices (desktops, 768px and up) */
 @media screen and (min-width: 769px) {
     .main-pic {
-        margin-left: 100px;
+        margin-left: 0px;
     }
     .logo {
         width: 30%;
@@ -126,7 +126,7 @@ body::-webkit-scrollbar {
         left: 65%;
     }
     .Bottom-bar {
-        margin-left: 260px;
+        margin-left: 0px;
         width: 100%;
     }
     .Bottom-bar .text p {
