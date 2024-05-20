@@ -21,7 +21,8 @@
 
 .profileTop {
     overflow: hidden;
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-left: 150px;
 }
 
 .profileTop h1, .profileTop h6 {
