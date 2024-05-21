@@ -22,13 +22,34 @@ p {
     width: 100%;
     border-collapse: collapse;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
+
 th, td {
     border: 0px solid #dddddd;
     text-align: left;
     padding: 15px;
     white-space: nowrap;
+}
+
+/* style-courseModule.css */
+
+.view-link {
+    color: #007BFF; 
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; 
+    padding: 5px 10px; 
+    border: 1px solid #007BFF; 
+    border-radius: 5px; 
+    background-color: #f0f8ff; 
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.view-link:hover {
+    background-color: #007BFF; 
+    color: white; 
+    cursor: pointer; 
 }
