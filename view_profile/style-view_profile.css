@@ -42,25 +42,26 @@
 }
 
 /* Mobile view adjustments */
-@media (max-width: 768px) {
+@media (max-width: 875px) {
     .container {
         width: 100%;
         padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center all items in the container */
     }
 
     .profilepic {
         transform: scale(1.0); /* Reset the scale for mobile view */
         margin-top: 80px;
-        margin-left: 0;
-        margin-right: 0;
-        text-align: center; /* Center align on mobile view */
-        float: none; /* Remove float on mobile view */
+        margin: 0 auto; /* Center align on mobile view */
         width: 100px; /* Example width for mobile view */
         height: 100px; /* Example height for mobile view */
         display: flex; /* Use flexbox to center content */
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
         flex-direction: column; /* Stack children vertically */
+        margin-top: 100px;
     }
 
     .profilepic img {
@@ -69,8 +70,13 @@
     }
 
     .profileTop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Center align items */
         text-align: center; /* Center align text on mobile */
         margin-top: 20px;
+        margin-left: -5px;
     }
 
     .profileTop h1, .profileTop h6 {
@@ -78,8 +84,12 @@
     }
 
     .p_data, .University_data {
+        width: 100%;
         margin-top: 20px;
         padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align items */
     }
 
     .p_data h2, .University_data h2 {
@@ -90,3 +100,4 @@
         text-align: center; /* Center align text on mobile */
     }
 }
+
