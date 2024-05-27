@@ -33,6 +33,29 @@ $result = $stmt->get_result();
 
 </head>
 <body>
+
+<div class="table">
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Paid Date</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Payment Link</th>
+            </tr>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $amount = $row['amount'];
+                    $record_id = $row['no']; // Use record id to uniquely identify the record
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row['no']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['paid_date']) . "</td>";
+                    echo "<td> Course Fee </td>";
+                    echo "<td>" . htmlspecialchars($amount) . "</td>";
+                    echo '<td> <button type="submit" class="view-link">PRINT</button> </td>';
+                    echo "</tr>";
+
     <div class="container">
         <div class="table">
             <table>
@@ -60,6 +83,7 @@ $result = $stmt->get_result();
                 } 
                 else {
                     echo "<tr><td colspan='5'>No payments found</td></tr>";
+
                 }
                 $conn->close();
                 ?>
