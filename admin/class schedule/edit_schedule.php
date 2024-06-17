@@ -8,15 +8,31 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+if (!isset($_GET['id'])) {
+    header("Location: class_schedule.php");
+    exit();
+}
+
 $id = $_GET['id'];
+
 $sql = "SELECT * FROM class_schedule WHERE id = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('i', $id);
-$stmt->execute();
-$result = $stmt->get_result();
-$schedule = $result->fetch_assoc();
-$stmt->close();
+if ($stmt) {
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $schedule = $result->fetch_assoc();
+    $stmt->close();
 
+    if (!$schedule) {
+        header("Location: class_schedule.php");
+        exit();
+    }
+} else {
+    die("Error in SQL query: " . $conn->error);
+}
+
+// Fetch courses for the dropdown menu
 $courses = [];
 $sql_courses = "SELECT course_name FROM course_tbl";
 $result_courses = $conn->query($sql_courses);
@@ -61,20 +77,15 @@ if (isset($_POST['update'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Schedule</title>
+    <title>Edit Class Schedule</title>
     <link rel="stylesheet" href="../style-template.css">
-    <link rel="stylesheet" href="style-module.css">
+    <link rel="stylesheet" href="style-class_schedule.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body class="body">
 <div class="container">
-    <br><br>    
+    <br><br>
     <h1>Edit Class Schedule</h1>
-    <?php if (!empty($success_message)): ?>
-        <div class="alert alert-success" role="alert">
-            <?= $success_message ?>
-        </div>
-    <?php endif; ?>
     <?php if (!empty($error)): ?>
         <div class="alert alert-danger" role="alert">
             <?= $error ?>
@@ -121,6 +132,7 @@ if (isset($_POST['update'])) {
             <input type="text" class="form-control" id="hall" name="hall" value="<?= htmlspecialchars($schedule['hall']); ?>" required>
         </div>
         <button type="submit" class="btn btn-primary" name="update">Update Schedule</button>
+        <a href="modules.php" class="btn btn-secondary">Back</a>
     </form>
 </div>
 </body>

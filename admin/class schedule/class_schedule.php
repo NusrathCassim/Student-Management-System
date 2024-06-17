@@ -50,6 +50,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         function searchSchedules() {
             var course = document.getElementById('course').value;
             var module = document.getElementById('module').value;
+
             $.ajax({
                 url: 'search_schedules.php',
                 type: 'GET',
@@ -65,7 +66,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     </script>
 </head>
 <body>
-    <div class="container mt-5" style = "margin-left :350px; ">
+    <div class="container mt-5">
         <div class="topic">
             <h1>Class Schedules</h1>
         </div>
