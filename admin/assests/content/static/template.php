@@ -154,7 +154,7 @@ if(isset($_SESSION['username'])) {
                 </a>
                 <div class="sub-menu">
                   <a href="../../../admin/AssignmentSection/assignmentSchedule/assignment_schedule.php" class="sub-item">Assignment Schedule</a>
-                  <a href="../../../admin/AssignmentSection/assignmentSubmission/assignment_submission.php" class="sub-item">Submissions Management</a>
+                  <!-- <a href="../../../admin/AssignmentSection/assignmentSubmission/assignment_submission.php" class="sub-item">Submissions Management</a> -->
                   <a href="../../../admin/AssignmentSection/mitigation requests/mitigation.php" class="sub-item">Mitigation Requests</a>
               </div>
             </div>
@@ -193,7 +193,7 @@ if(isset($_SESSION['username'])) {
                     <!-- Dropdown -->
                 </a>
                 <div class="sub-menu">
-                    <a href="" class="sub-item">Graduation Schedule</a>
+                    <a href="../../../admin/graduation/payment_plan/plan.php" class="sub-item">Graduation Schedule</a>
                     <a href="" class="sub-item">Register for Graduation</a>
                     <a href="" class="sub-item">Graduation Photos</a>
                     <a href="" class="sub-item">Registration Summary</a>
