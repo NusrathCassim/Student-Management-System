@@ -80,9 +80,10 @@ $conn->close();
                 </select>
             </div>
             <div class="form-group">
-                <label for="studentId">Student ID:</label>
+                <label for="studentId">Student ID / Batch</label>
                 <select id="studentId" name="studentId" required onchange="updateStudentName()">
                     <option value="">-- Select Student ID --</option>
+                    <option value="batch">Select Batch</option>
                     <?php foreach ($students as $username => $student_name): ?>
                         <option value="<?php echo htmlspecialchars($username); ?>"><?php echo htmlspecialchars($username); ?></option>
                     <?php endforeach; ?>
@@ -144,7 +145,18 @@ $conn->close();
 
         <!-- Results table container -->
         <div class="results-table" id="resultsTable" style="display:none;">
-            <h2>Final Results</h2>
+            <div class="results-header">
+                <h2>Final Results</h2>
+                <div class="sort-options">
+                    <span>Sort by:</span>
+                    <button class="sort-button" onclick="sortResults('asc')">Ascending</button>
+                    <button class="sort-button" onclick="sortResults('desc')">Descending</button>
+
+                    <button class="print-button" onclick="printResults()">Print Results</button>
+
+
+                </div>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -240,7 +252,13 @@ $conn->close();
                 return;
             }
 
-            fetch('get_results.php?username=' + studentId)
+            let url = 'get_results.php?username=' + studentId;
+            if (studentId === 'batch') {
+                const batch = document.getElementById('batch').value;
+                url = 'get_results.php?batch=' + batch;
+            }
+
+            fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.getElementById('resultsTableBody');
@@ -271,6 +289,27 @@ $conn->close();
                 .catch(error => {
                     console.error('Error fetching results:', error);
                 });
+        }
+
+        function sortResults(order) {
+            const tableBody = document.getElementById('resultsTableBody');
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+
+            rows.sort((a, b) => {
+                const finalResultA = parseFloat(a.cells[6].textContent) || 0;
+                const finalResultB = parseFloat(b.cells[6].textContent) || 0;
+
+                if (order === 'asc') {
+                    return finalResultA - finalResultB;
+                } else if (order === 'desc') {
+                    return finalResultB - finalResultA;
+                } else {
+                    return 0;
+                }
+            });
+
+            tableBody.innerHTML = '';
+            rows.forEach(row => tableBody.appendChild(row));
         }
 
         function goBack() {
@@ -306,6 +345,22 @@ $conn->close();
                 console.error('Error:', error);
             });
         });
+        function printResults() {
+            // Hide elements not to be printed
+            const sortOptions = document.querySelector('.sort-options');
+            sortOptions.style.display = 'none';
+
+           // Print the results table
+           const resultsTable = document.getElementById('resultsTable');
+           const printContents = resultsTable.innerHTML;
+           const originalContents = document.body.innerHTML;
+           document.body.innerHTML = printContents;
+           window.print();
+           document.body.innerHTML = originalContents;
+           sortOptions.style.display = 'block';
+}
+
+
     </script>
 </body>
 </html>
